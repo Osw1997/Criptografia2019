@@ -1,6 +1,5 @@
 % % % Creamos el cuadro Vigenere
 alfabeto = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ';
-r = 'PAsame la tarea de criptografia';
 long_alfa = length(alfabeto);
 cuadro_vig = zeros(long_alfa,long_alfa); 
 % Corrimiento del alfabeto
@@ -23,7 +22,6 @@ for n = 1:length(frase)
             indx_pwd = 1;
         end
         y = find(cuadro_vig(:,1) == upper( pass(indx_pwd) ));
-%         indx_pwd = indx_pwd + 1;
 %         Coordenada X
         x = find(cuadro_vig(1,:) == upper( frase(n) ));
         fprintf('%c', cuadro_vig(y,x));
@@ -32,5 +30,4 @@ for n = 1:length(frase)
     end
 end
 fprintf('\n'); 
-%  cuadro_vig(:,1)
  
