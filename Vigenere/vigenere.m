@@ -2,7 +2,7 @@
 alfabeto = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ';
 r = 'PAsame la tarea de criptografia';
 long_alfa = length(alfabeto);
-cuadro_vig = zeros(long_alfa,long_alfa);
+cuadro_vig = zeros(long_alfa,long_alfa); 
 % Corrimiento del alfabeto
 for n = 1:long_alfa + 1
     for m = 1:long_alfa
