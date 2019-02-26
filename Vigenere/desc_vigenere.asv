@@ -126,20 +126,20 @@ end
 end
 % Longitud de la contraseña
 Lk = mode(factores); 
-Lk = 4;
+% Lk = 4;
 % Cadena del titulo
 titulo = zeros(1,11);
 titulo(1:10) = 'Letra no. ';
 for m = 1:Lk
     % Vector de índices
-    ind = m:Lk:length(frase);
+    ind = 1:Lk:length(frase);
     % Subtexto 1 de longitud Lk
     subtxt = frase(ind);
     % % Se miden la frecuencia de cada letra
     % Array de frecuencias de cada letra
     frec = zeros(1,Lalfa);
     for n = 1:Lalfa
-        frec(n) = count(subtxt, letra(n));
+        frec(n) = count(frase, letra(n));
     end
     % % Se plotea el resultado
     % Eje x
@@ -148,13 +148,7 @@ for m = 1:Lk
     figure();
     bar(categorical(num2cell(x), num2cell(x)), frec);
 %     titulo = 'Letra no.'; 
-    titulo(end) = char(m + '0'); 
+    titulo(end) = char(Lk + '0'); 
     titulo = char(titulo);
     title(titulo); ylabel('Frecuencia');
 end
-% Frecuencia de letras en español
-% frec_letras = [16927,2288,5362,6333,17036,844,1582,1388,7572,748,61,7022,4327,9097,0,11566,3493,1404,9005,9311,5671,5548,1477,27,218,1378,535];
-frec_letras = [16927,2288,5362,6333,17036,844,1582,1388,7572,748,61,7022,4327,9097,338,11566,3493,1404,9005,9311,5671,5548,1477,27,218,1378,535];
-figure();
-bar(categorical(num2cell(x), num2cell(x)), frec_letras);
-title('Frecuencia español'); ylabel('Frecuencia');

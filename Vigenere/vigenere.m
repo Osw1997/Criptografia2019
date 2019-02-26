@@ -11,7 +11,7 @@ end
 % Se convierte a char
 cuadro_vig = char(cuadro_vig);
 % Se extrae el texto de un txt
-id = fopen('txt.txt', 'r');
+id = fopen('50q.txt', 'r');
 frase = upper(fscanf(id, '%c'));
 
 % frase = upper('en lo personal 6');
@@ -32,7 +32,7 @@ frase(frase == 'Ú') = 'U';
 
 % Contraseña
 % pass = input('Contraseña: ', 's');
-pass = 'señor';
+pass = 'HOLA';
 
 
 id = fopen('cod_vig.txt', 'w');
