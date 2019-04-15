@@ -14,10 +14,10 @@ R = ['XTGEMHYCZUBAN';...
 % clave = 'NET';
 % clave = upper(clave);
 % texto = upper(input('Texto: ', 's'));
-id = fopen('enigma__.txt', 'r');
+id = fopen('enigma.txt', 'r');
 texto = upper(fscanf(id, '%c'));
 fclose(id);
-texto = upper('HOLA');
+% texto = upper('HOLA');
 % texto = upper(tetxo);
 % Se quitan los espacios
 texto(texto == ' ') = [];
