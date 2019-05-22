@@ -57,12 +57,12 @@ P = [16 07 20 21 ...
      19 13 30 06 ...
      22 11 04 25];
 %  Se expanden los 32 bits de Ri
-E_Ri = Ri_f(reshape(E', [], 48))
-kf_f
+E_Ri = Ri_f(reshape(E', [], 48));
+kf_f;
 % Operación XOR entre E(Ri) y su respectiva llave (Ki)
 xor_ERi = bitxor(str2num(E_Ri'), str2num(kf_f'));
 xor_ERi = num2str(xor_ERi');
-xor_ERi(xor_ERi == ' ') = []
+xor_ERi(xor_ERi == ' ') = [];
 % % Se hace el descompone la cadena de bits de E(Ri) +o Ki
 % % en 8 bloques de 6 bits
 % Se inicializan variables auxiliares
@@ -73,6 +73,7 @@ S = zeros(size(S1));
 S_concat = [];
 % Se hace un barrido de cada caja Si, i = 1:8
 for n = 1:8
+%     n
     switch n
         case 1
             S = S1;
@@ -102,6 +103,7 @@ for n = 1:8
     valor_caja(valor_caja == ' ') = [];
     S_concat = [S_concat valor_caja];
 end
+S_concat;
 % Retorna la permutación de la función de Feistel
 feistel_func = S_concat(P);
 return;
