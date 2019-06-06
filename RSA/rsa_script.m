@@ -45,6 +45,7 @@ d = res_euclides;
 n;
 
 % Diccionario de alfabeto y sМmbolos
+dicc = 1:54;
 dicc_str = num2str(dicc');
 % dicc_let = ['A':'N' 'я':'Z' '0':'9' 'аимсз .,©?║!";э'];
 dicc_let = ['A':'N' 'я' 'O':'Z' '0':'9' 'аимсз .,©?║!";э'];

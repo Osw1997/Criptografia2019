@@ -3,14 +3,14 @@
 dicc_let = ['A':'N' 'Ñ' 'O':'Z' '0':'9' 'ÁÉÍÓÚ .,¿?¡!";Ü'];
 % Números para el descifrado proporcionados por el otro sujeto
 % Para rsaRafa.txt
-% e = 3185163659;
-% n =  10617418249;
+e = 3185163659;
+n =  10617418249;
 % Para cif_rsa.txt
-e = 5;
-n = 55328440151;
+% e = 5;
+% n = 55328440151;
 % Se leen los números a descifrar
-% id = fopen('rsaRafa.txt', 'r');
-id = fopen('cif_rsa.txt', 'r');
+id = fopen('rsaRafa.txt', 'r');
+% id = fopen('cif_rsa.txt', 'r');
 msj_cif = upper(fscanf(id, '%c'));
 fclose(id);
 % Se asume que lo números están divididos por una coma, así que se separan
@@ -18,6 +18,7 @@ fclose(id);
 msj = char(strsplit(msj_cif,',')');
 msj(end,:) = [];
 msj = str2num(msj);
+[filas, columnas] = size(msj);
 % Arrays auxiliares para el descifrado
 array_rsa_des = zeros(1,filas);
 % Según lo que el otro sujeto diga, el número de dígitos por bloque de 5
